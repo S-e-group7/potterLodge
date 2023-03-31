@@ -293,7 +293,7 @@ form {
             <div class="icon"> <img src="images/logo.jpeg" class="logo" alt=""></div>
             <div class="text_one">
                 <h5 class="dont">Don't have an account? </h5>
-                <a href="Signup.html">
+                <a href="http://localhost/SE_PROJECT/softwareEnginerring-/php/signup.php">
                     <h5 class="sign">Sign up</h5>
                 </a>
             </div>

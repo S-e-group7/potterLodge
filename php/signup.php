@@ -297,7 +297,7 @@ form {
 
             <div class="text_one">
                 <h5 class="dont">Already have an account? </h5>
-                <a href="login.php">
+                <a href="login.p">
                     <h5 class="sign">Login</h5>
                 </a>
             </div>
