@@ -52,7 +52,6 @@ input {
     margin: 7px 0px 7px 0px;
     height: 40px;
     outline: none;
-    border: none;
     padding: 0px 10px 0 10px;
     border-radius: 8px;
 }

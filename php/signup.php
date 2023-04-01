@@ -6,7 +6,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Potters Lodge</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="images/logo.jpeg" type="image/x-icon">
+    <script type="text/javascript">
+		function validateForm() {
+			var fname = document.forms["myForm"]["fname"].value;
+			var lname = document.forms["myForm"]["lname"].value;
+			var hname = document.forms["myForm"]["hname"].value;
+			var staff_id = document.forms["myForm"]["staff_id"].value;
+			var passw = document.forms["myForm"]["passw"].value;
+
+			if (fname == "" || lname == "" || hname == "" || staff_id == "" || passw == "") {
+				alert("All fields must be filled out");
+				return false;
+			}
+
+			if (staff_id.length >= 15) {
+				alert("The staff ID must be below 16 characters");
+				return false;
+			}
+
+			return true;
+		}
+	</script>
+
     <style>
         * {
     margin: 0;
@@ -36,13 +58,6 @@ section {
     border-radius: 400px;
 }
 
-.staff_id {
-
-    background-color: rgb(236, 236, 236);
-    height: 60px;
-    width: 80%;
-    text-align: center;
-}
 
 input {
     background-color: rgb(214, 214, 214);
@@ -50,7 +65,7 @@ input {
     margin: 7px 0px 7px 0px;
     height: 40px;
     outline: none;
-    border: none;
+    
     padding: 0px 10px 0 10px;
     border-radius: 8px;
 }
@@ -96,106 +111,6 @@ input {
     text-align: center;
     margin-top: 10px;
 }
-
-/* div {
-    margin-top: 5rem;
-    margin-left: 12rem;
-}
- */
-
-.right {
-    margin-top: 2rem;
-}
-
-.container {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-
-}
-
-.side {
-    background-color: rgb(2, 2, 59);
-    width: 20%;
-    height: 100vh;
-}
-
-.dash {
-
-    width: 80%;
-    height: 100vh;
-}
-
-.side_logo {
-    width: 100px;
-    height: 100px;
-    border-radius: 100%;
-    text-align: center;
-}
-
-.dash_logo {
-    text-align: center;
-    margin-top: 70px;
-}
-
-.side_button {
-    width: 200px;
-    height: 40px;
-    border: none;
-    color: white;
-    border-radius: 8px;
-    margin-top: 2rem;
-    background-color: #125DCD;
-
-}
-
-.side_buttons {
-    width: 200px;
-    margin: auto;
-
-}
-
-.logout {
-    margin-top: 60%;
-    text-align: center;
-}
-
-
-.user {
-    width: 50px;
-    height: 50px;
-
-}
-
-
-
-.top_bar {
-    height: 70px;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-}
-
-.profile {
-    display: flex;
-    width: 100%;
-    margin-left: 40px;
-
-    align-items: center;
-}
-
-.date {
-    margin-left: 50px;
-    margin-top: 30px;
-    color: rgb(153, 153, 153);
-}
-
-.welcome {
-
-    margin-top: 10px;
-    color: rgb(2, 2, 59);
-}
-
 form {
     background-color: #e9e9e9;
     width: 300px;
@@ -208,109 +123,40 @@ form {
     margin-right: 20px;
 }
 
-.search_bar {
-    all: unset;
-    font: 16px system-ui;
-    color: #1a1a1a;
-    height: 100%;
-    width: 100%;
-    padding: 6px 10px;
-}
-
-::placeholder {
-    color: #686868;
-    opacity: 0.7;
-}
-
-.search_icon {
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
-}
-
-.search_section .form {
-    display: flex;
-    align-items: center;
-    margin-top: 10px
-}
-
-.search_result {
-    background-color: rgb(237, 237, 237);
-    height: 70%;
-    width: 90%;
-    margin: auto;
-    border-radius: 20px;
-    margin-top: 50px;
-    display: grid;
-    grid-template-columns: auto auto;
-    padding: 10px;
-}
-
-.stu_card {
-    background-color: rgba(255, 255, 255, 0.8);
-    border: 1px solid rgba(255, 255, 255, 0.8);
-    padding: 15px;
-    font-size: 30px;
-    display: flex;
-    margin: 10px;
-    border-radius: 10px;
-
-}
-
-.stu_img {
-    width: 130px;
-    height: 130px;
-    margin: auto;
-}
-
-.stu_ID {
-    margin-top: 5px;
-}
-
-.stu_phone {
-    margin-top: 5px;
-
-}
-
-.stu_name {
-    margin-top: 5px;
-}
-
-.details {
-    margin: auto;
-
-}
-
-
     </style>
 </head>
 
 <body>
     <section>
-        <img src="Oguaa.jpg" alt="">
+        <img src="images/Oguaa.jpg" alt="">
 
 
 
 
         <div class="right">
-            <div class="icon"><img src="logo.jpeg" class="logo" alt=""></div>
+            <div class="icon"><img src="images/logo.jpeg" class="logo" alt=""></div>
 
             <div class="text_one">
                 <h5 class="dont">Already have an account? </h5>
-                <a href="login.p">
+                <a href="login.php">
                     <h5 class="sign">Login</h5>
                 </a>
             </div>
-            <div class="form"><input type="text" placeholder="First Name"><br>
-                <input type="text" placeholder="Last Name"><br>
-                <input type="text" placeholder="Enter Hall"><br>
-                <input type="text" placeholder="Staff Id"><br>
-                <input type="text" placeholder="Password"><br>
-                <a href="/dashboard.html"><button class="sign_button">SIGN UP</button></a>
-            </div>
-
+            <br><br><br><br><br><br><br><br><br>
+            <form name='myForm' action="adminforms.php" method="POST" style="margin-left:200px;" onsubmit="return validateForm()">
+                <div class="form">   
+                    <input type="text" name="fname" placeholder="First Name"><br>
+                    <input type="text" name="lname" placeholder="Last Name"><br>
+                    <input type="text" name="hname"placeholder="Enter Hall"><br>
+                    <input type="text" name="staff_id" placeholder="Staff Id"><br>
+                    <input type="text" name="passw" placeholder="Password"><br>
+                 <input style='background-color:rgb(2, 2, 59);color:white' type="submit" value="SIGN UP">
+                 </div>
+            </form>
+            
         </div>
     </section>
+    
 </body>
 
 </html>

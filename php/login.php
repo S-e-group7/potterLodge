@@ -293,14 +293,14 @@ form {
             <div class="icon"> <img src="images/logo.jpeg" class="logo" alt=""></div>
             <div class="text_one">
                 <h5 class="dont">Don't have an account? </h5>
-                <a href="http://localhost/SE_PROJECT/softwareEnginerring-/php/signup.php">
+                <a href="http://localhost/SE_PROJECT/softwareEngineering/php/signup.php">
                     <h5 class="sign">Sign up</h5>
                 </a>
             </div>
             <div class="form">
                 <input type="text" placeholder="Staff Id"><br>
                 <input type="text" placeholder="password"><br>
-                <a href="http://localhost/SE%20project/softwareEnginerring-/php/dashboard.php"> <button class="sign_button">LOG IN</button></a>
+                <a href="http://localhost/SE_PROJECT/softwareEngineering/php/dashboard.php"> <button class="sign_button">LOG IN</button></a>
                 <div class="text_two">
                     <h5 class="dont">Forgot password? </h5>
                     <h5 class="sign">Reset here</h5>
