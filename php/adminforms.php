@@ -20,8 +20,10 @@
     $query = "INSERT INTO  admin1(fname,lname,hname,staff_id,passw) VALUES ('$fname','$lname','$hname','$staff_id',$passw)";
     //connecting the $connect to the query of the database
     if(mysqli_query($connect,$query)){
-        print("succefull");
-        //header()
+        echo "<h1>Success! You have been registered. Please wait while you are redirected to the homepage.</h1>";
+        // using the refresh  and the header method
+        header("refresh:1;url=login.php");
+        exit();
     }
     mysqli_close($connect);
 ?>
