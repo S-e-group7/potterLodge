@@ -213,7 +213,7 @@ form {
         <form name='myForm' action="login_processor.php" method="POST" style="margin-left:185px;" onsubmit=" return validateForm()">
             <div class="form">
                 <input type="text" name='staff_id' placeholder="Staff Id"><br>
-                <input type="text" name="passw" placeholder="password"><br>
+                <input type="password" name="passw" placeholder="password"><br>
                 <input style='background-color:rgb(2, 2, 59);color:white' type="submit" value="LOG-IN">
             </div>
         </form>

@@ -299,7 +299,7 @@ form {
 
                 </div>
                 <div class="logout">
-                    <a href="/login.html"><button class="side_button">LOG OUT</button></a>
+                    <a href="http://localhost/SE_PROJECT/softwareEngineering/php/login.php"><button class="side_button">LOG OUT</button></a>
                 </div>
             </div>
             <div class="dash">

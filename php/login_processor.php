@@ -1,62 +1,40 @@
+
 <?php
-session_start();
-
-// Check if the user is already logged in
-if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
-    header("location: dashboard.php");
-    exit;
-}
-
-// Check if the login form was submitted
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
-    // Retrieve the username/email and password from the form data
+    include ('include/favicon.html');
+    // creating variables for staff_id and passw
     $staff_id = $_POST["staff_id"];
-    $password = $_POST["password"];
+    $passw = $_POST["passw"];
 
-    // Create a database connection
-    $conn = mysqli_connect("localhost", "username", "password", "s.e");
+    // creating a connecting 
+    $connect = mysqli_connect("localhost","root","","s.e");
 
-    // Check if the connection was successful
-    if (!$conn) {
-        die("Connection failed: " . mysqli_connect_error());
+    // verifying if all input are filled
+    if(!($connect)){
+        die("enter all information".mysqli_connect_error());
     }
 
-    // Create a SQL query to check if the username/email and password match a record in the database
-    $sql = "SELECT staff_id FROM admin1 WHERE (staff_id = ? ) AND passw = ?";
+    // selecting the data from the database that match the staff_id entered
+    // the admin1 table is the one containing the staff members details
+    $query = "SELECT * FROM admin1 WHERE staff_id = '$staff_id'";
+    $result = mysqli_query($connect,$query);
+    $num_rows = mysqli_num_rows($result);
 
-    // Prepare the query for execution
-    $stmt = mysqli_prepare($conn, $sql);
-
-    // Bind the parameters to the query
-    mysqli_stmt_bind_param($stmt, "sss", $staff_id,$passw);
-
-    // Execute the query
-    mysqli_stmt_execute($stmt);
-
-    // Get the result of the query
-    $result = mysqli_stmt_get_result($stmt);
-
-    // Check if the query returned a matching record
-    if (mysqli_num_rows($result) == 1) {
-
-        // Fetch the user data from the query result
-        $row = mysqli_fetch_assoc($result);
-
-        // Set session variables to indicate that the user is logged in
-        $_SESSION["loggedin"] = true;
-        $_SESSION["staff_id"] = $row["staff_id"];
-        $_SESSION["passw"] = $row["passw"];
-
-        // Redirect the user to the home page or dashboard
-        header("location: dashboard.php");
-        exit;
+    // checking if the staff_id exists in the database
+    if ($num_rows == 0) {
+        echo "Invalid staff ID.";
     } else {
-        // Display an error message if the login details are incorrect
-        $login_error = "Invalid staff_id or password.";
+        // fetching the row that contains the staff_id entered
+        $row = mysqli_fetch_assoc($result);
+        // verifying if the password entered matches the hashed password in the database
+        if (password_verify($passw, $row["passw"])) {
+            // password is correct, do something
+            echo "<h2 style='text-align: center; color: green;'>Login successful.</h2>";
+            header("refresh:1; url=dashboard.php");
+        } else {
+            // password is incorrect
+            echo "Incorrect password.";
+        }
     }
 
-    // Close the database connection
-    mysqli_close($conn);
-}
+    mysqli_close($connect);
 ?>
