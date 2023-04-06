@@ -310,7 +310,7 @@ form {
 
                     </div>
                     <div search_section>s
-                        <form id="form" role="search">
+                        <form id="form" role="search" method="GET" action="dashboard_processor.php">
                             <input type="search" id="query" class="search_bar" name="q"
                                 placeholder="Enter student id..." aria-label="Search through site content">
                             <img src="images/search.png" class="search_icon" alt="">
