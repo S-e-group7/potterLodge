@@ -293,9 +293,19 @@ form {
             <div class="side">
                 <div class="dash_logo"> <img src="images/logo.jpeg" class="side_logo" alt=""></div>
                 <div class="side_buttons">
-                    <button class="side_button">Students</button>
-                    <button class="side_button">Staff</button>
-                    <button class="side_button">Rooms</button>
+                    <br><br>
+                
+                        <form style=" width: fit-content" action="student_db.php" method="GET">
+                            <input style="background-color:blue; width:200px" type="submit" value="Student">
+                        </form>
+                    <br>
+                        <form style=" width: fit-content" action="staff_db.php" method="GET">
+                            <input style="background-color:blue; width:200px" type="submit" value="Staff">
+                        </form>
+                    <br>
+                        <form style=" width: fit-content" action="student_db.php" method="GET">
+                            <input style="background-color:blue; width:200px" type="submit" value="Room">
+                        </form>
 
                 </div>
                 <div class="logout">
@@ -309,11 +319,9 @@ form {
                         <h3 class="username">Micheal Oduro</h3>
 
                     </div>
-                    <div search_section>s
-                        <form id="form" role="search" method="GET" action="dashboard_processor.php">
-                            <input type="search" id="query" class="search_bar" name="q"
-                                placeholder="Enter student id..." aria-label="Search through site content">
-                            <img src="images/search.png" class="search_icon" alt="">
+                    <div search_section>
+                        <form  style="background-color:#125DCD" id="form" role="search" method="GET" action="dashboard_processor.php">
+                        <input type="text" name="query" placeholder="Search..."> 
                         </form>
                     </div>
 

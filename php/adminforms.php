@@ -28,6 +28,7 @@
         exit();
     }
     mysqli_close($connect);
+
 ?>
  
 

@@ -1,7 +1,8 @@
 <?php
 include('include/favicon.html');
 // creating a variables of the columns in the database
-$query = $_GET["query"];
+//$query = $_GET["query"];
+$query = isset($_GET['query']) ? $_GET['query'] : '';
 $server = "localhost";
 $user = "root";
 $password = "";
@@ -9,8 +10,8 @@ $password = "";
 $database = "s.e";
 // creating a connect variable
 $connect = new mysqli($server,$user,$password,$database);
-
-$sql = "SELECT * FROM db WHERE Student_ID  OR  Room_number LIKE '%$query%'";
+// making the search using studen_id and Room_Number in making the search
+$sql = "SELECT * FROM db WHERE Student_ID LIKE '%$query%' OR  Room_Number LIKE '%$query%'";
 $result = $connect->query($sql);
 
 // display the results in a table
