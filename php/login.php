@@ -24,6 +24,14 @@
 
 			return true;
 		}
+
+        // the javascript is preventing the user for going back after logging out of the system
+    history.pushState(null, null, location.href);
+    window.onpopstate = function () {
+        history.go(1);
+    };
+
+
 	</script>
     <!-- block css styling -->
     <style>

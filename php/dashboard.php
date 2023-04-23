@@ -31,20 +31,7 @@ section {
     grid-template-columns: 1fr 1fr;
 }
 
-.logo {
-    width: 150px;
-    height: 150px;
-    margin: auto;
-    border-radius: 400px;
-}
 
-.staff_id {
-
-    background-color: rgb(236, 236, 236);
-    height: 60px;
-    width: 80%;
-    text-align: center;
-}
 
 input {
     background-color: rgb(214, 214, 214);
@@ -56,20 +43,7 @@ input {
     border-radius: 8px;
 }
 
-.text_one {
-    margin-left: 200px;
-    display: flex;
-    margin-top: 50px;
 
-}
-
-.text_two {
-    display: flex;
-    margin: 0.5rem;
-    margin-left: 16rem;
-    margin-top: 30px;
-
-}
 
 .dont {
     color: gray;
@@ -308,8 +282,10 @@ form {
                         </form>
 
                 </div>
-                <div class="logout">
-                    <a href="http://localhost/SE_PROJECT/softwareEngineering/php/login.php"><button class="side_button">LOG OUT</button></a>
+                <div  style="margin-left:38px ;" class="logout">
+                    <form style="width:fit-content;" action="logout.php" method="POST">
+                        <input style="background-color:blue; width:200px" type="submit" value="LOGOUT">
+                    </form>
                 </div>
             </div>
             <div class="dash">
