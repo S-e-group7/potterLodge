@@ -29,7 +29,9 @@
         if (password_verify($passw, $row["passw"])) {
             // password is correct, do something
             echo "<h2 style='text-align: center; color: green;'>Login successful.</h2>";
+            session_start();
             header("refresh:1; url=dashboard.php");
+            $_SESSION['adminName']=$staff_id;
         } else {
             // password is incorrect
             echo "Incorrect password.";

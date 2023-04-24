@@ -1,3 +1,16 @@
+
+<?php
+include('conn.php');
+
+    session_start();
+    $admin=$_SESSION['adminName'];
+
+   # $sql="SELECT * from admin1 where ";
+  #  $que-mysqli_query($conn,$sql);
+   # $res=mysqli_fetch_assoc($que);
+
+
+      ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,257 +20,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home-page</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dashboard.css">
     <link rel="shortcut icon" href="images/logo.jpeg" type="image/x-icon">
     
-    <style>
-        * {
-    margin: 0;
-    padding: 0;
-    outline: none;
-    box-sizing: border-box;
-    text-decoration: none;
-    list-style: none;
-    font-family: 'Courier New', Courier, monospace
-}
-
-img {
-    width: 50vw;
-    height: 100vh;
-    object-fit: cover;
-}
-
-section {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
-
-
-
-input {
-    background-color: rgb(214, 214, 214);
-    width: 300px;
-    margin: 7px 0px 7px 0px;
-    height: 40px;
-    outline: none;
-    padding: 0px 10px 0 10px;
-    border-radius: 8px;
-}
-
-
-
-.dont {
-    color: gray;
-}
-
-.sign {
-    color: rgb(2, 2, 59);
-}
-
-.sign_button {
-    width: 300px;
-    height: 40px;
-    border: none;
-    color: white;
-    border-radius: 8px;
-    margin-top: 2rem;
-    background-color: rgb(2, 2, 59);
-}
-
-.icon {
-    text-align: center;
-}
-
-.form {
-    text-align: center;
-    margin-top: 10px;
-}
-
-/* div {
-    margin-top: 5rem;
-    margin-left: 12rem;
-}
- */
-
-.right {
-    margin-top: 2rem;
-}
-
-.container {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-
-}
-
-.side {
-    background-color: rgb(2, 2, 59);
-    width: 20%;
-    height: 100vh;
-}
-
-.dash {
-
-    width: 80%;
-    height: 100vh;
-}
-
-.side_logo {
-    width: 100px;
-    height: 100px;
-    border-radius: 100%;
-    text-align: center;
-}
-
-.dash_logo {
-    text-align: center;
-    margin-top: 70px;
-}
-
-.side_button {
-    width: 200px;
-    height: 40px;
-    border: none;
-    color: white;
-    border-radius: 8px;
-    margin-top: 2rem;
-    background-color: #125DCD;
-
-}
-
-.side_buttons {
-    width: 200px;
-    margin: auto;
-
-}
-
-.logout {
-    margin-top: 60%;
-    text-align: center;
-}
-
-
-.user {
-    width: 50px;
-    height: 50px;
-
-}
-
-
-
-.top_bar {
-    height: 70px;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-}
-
-.profile {
-    display: flex;
-    width: 100%;
-    margin-left: 40px;
-
-    align-items: center;
-}
-
-.date {
-    margin-left: 50px;
-    margin-top: 30px;
-    color: rgb(153, 153, 153);
-}
-
-.welcome {
-
-    margin-top: 10px;
-    color: rgb(2, 2, 59);
-}
-
-form {
-    background-color: #e9e9e9;
-    width: 300px;
-    height: 44px;
-    border-radius: 5px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-top: 10px;
-    margin-right: 20px;
-}
-
-.search_bar {
-    all: unset;
-    font: 16px system-ui;
-    color: #1a1a1a;
-    height: 100%;
-    width: 100%;
-    padding: 6px 10px;
-}
-
-::placeholder {
-    color: #686868;
-    opacity: 0.7;
-}
-
-.search_icon {
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
-}
-
-.search_section .form {
-    display: flex;
-    align-items: center;
-    margin-top: 10px
-}
-
-.search_result {
-    background-color: rgb(237, 237, 237);
-    height: 70%;
-    width: 90%;
-    margin: auto;
-    border-radius: 20px;
-    margin-top: 50px;
-    display: grid;
-    grid-template-columns: auto auto;
-    padding: 10px;
-}
-
-.stu_card {
-    background-color: rgba(255, 255, 255, 0.8);
-    border: 1px solid rgba(255, 255, 255, 0.8);
-    padding: 15px;
-    font-size: 30px;
-    display: flex;
-    margin: 10px;
-    border-radius: 10px;
-
-}
-
-.stu_img {
-    width: 130px;
-    height: 130px;
-    margin: auto;
-}
-
-.stu_ID {
-    margin-top: 5px;
-}
-
-.stu_phone {
-    margin-top: 5px;
-
-}
-
-.stu_name {
-    margin-top: 5px;
-}
-
-.details {
-    margin: auto;
-
-}
-
-
-    </style>
 </head>
 
 <body>
@@ -270,21 +35,21 @@ form {
                     <br><br>
                 
                         <form style=" width: fit-content" action="student_db.php" method="GET">
-                            <input style="background-color:blue; width:200px" type="submit" value="Student">
+                            <input style="background-color:blue; width:200px;   cursor:pointer;" type="submit" value="Student">
                         </form>
                     <br>
                         <form style=" width: fit-content" action="staff_db.php" method="GET">
-                            <input style="background-color:blue; width:200px" type="submit" value="Staff">
+                            <input style="background-color:blue; width:200px;   cursor:pointer;" type="submit" value="Staff">
                         </form>
                     <br>
                         <form style=" width: fit-content" action="student_db.php" method="GET">
-                            <input style="background-color:blue; width:200px" type="submit" value="Room">
+                            <input style="background-color:blue; width:200px;   cursor:pointer;" type="submit" value="Room">
                         </form>
 
                 </div>
                 <div  style="margin-left:38px ;" class="logout">
                     <form style="width:fit-content;" action="logout.php" method="POST">
-                        <input style="background-color:blue; width:200px" type="submit" value="LOGOUT">
+                        <input style="background-color:blue; width:200px;   cursor:pointer;" type="submit" value="LOGOUT">
                     </form>
                 </div>
             </div>
@@ -292,12 +57,12 @@ form {
                 <div class="top_bar">
                     <div class="profile">
                         <img src="images/icons8-user-64.png" class="user" alt="">
-                        <h3 class="username">Micheal Oduro</h3>
+                        <h3 class="username"> Micheal</h3>
 
                     </div>
                     <div search_section>
                         <form  style="background-color:#125DCD" id="form" role="search" method="GET" action="dashboard_processor.php">
-                        <input type="text" name="query" placeholder="Search..."> 
+                        <input type="text" id="query" placeholder="Search..."> 
                         </form>
                     </div>
 
@@ -311,39 +76,16 @@ form {
                     <h1 class="welcome">Welcome back Micheal</h1>
                 </div>
                 <div class="search_result">
+
+
                     <!-- <div class="stu_cards"> -->
-                    <div class="stu_card">
-                        <img src="images/icons8-user-64.png" class="stu_img" alt="">
-                        <div class="details">
-                            <h6 class="stu_name">Godfred Tieku</h6>
-                            <h6 class="stu_ID">PS/ITC/20/0048</h6>
-                            <h6 class="stu_phone">+233549916191</h6>
-                        </div>
+                    <div class='loader'>
+                        
                     </div>
-                    <div class="stu_card">
-                        <img src="images/icons8-user-64.png" class="stu_img" alt="">
-                        <div class="details">
-                            <h6 class="stu_name">Godfred Tieku</h6>
-                            <h6 class="stu_ID">PS/ITC/20/0048</h6>
-                            <h6 class="stu_phone">+233549916191</h6>
-                        </div>
-                    </div>
-                    <div class="stu_card">
-                        <img src="images/icons8-user-64.png" class="stu_img" alt="">
-                        <div class="details">
-                            <h6 class="stu_name">Godfred Tieku</h6>
-                            <h6 class="stu_ID">PS/ITC/20/0048</h6>
-                            <h6 class="stu_phone">+233549916191</h6>
-                        </div>
-                    </div>
-                    <div class="stu_card">
-                        <img src="images/icons8-user-64.png" class="stu_img" alt="">
-                        <div class="details">
-                            <h6 class="stu_name">Godfred Tieku</h6>
-                            <h6 class="stu_ID">PS/ITC/20/0048</h6>
-                            <h6 class="stu_phone">+233549916191</h6>
-                        </div>
-                    </div>
+
+                   
+                 
+             
 
 
                 </div>
@@ -355,6 +97,9 @@ form {
         </div>
 
     </section>
+<script src='jquery.js'></script>
+<script src='dash.js'></script>
+
 
 </body>
 

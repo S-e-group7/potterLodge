@@ -1,3 +1,27 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Search Results</title>
+	<style>
+    
+    
+  </style>
+</head>
+<body>
+<div class="container">
+
+	<div class="btn">
+		<a href="http://localhost/SE_PROJECT/softwareEngineering/php/dashboard.php?">
+			<input style="width: 100px; height:50px; background-color:green; color:white; border-radius:2px;" type="button" value="BACK">
+		</a>
+	</div>
+  <div class="logo">
+  <div class="dash_logo"> <img src="images/logo.jpeg" class="side_logo" alt=""></div>
+  </div>
+ 
+	<br>
+
 <?php
 include('include/favicon.html');
 // creating a variables of the columns in the database
@@ -20,7 +44,7 @@ if ($result->num_rows > 0){
     echo "<table border='2px solid' style='width:100%; height:100%;'>";
     echo "<tr><th style='background-color: lightgray; border: 1px solid black;'>First Name</th><th style='background-color: lightgray; border: 1px solid black;'>Last Name</th><th style='background-color: lightgray; border: 1px solid black;'>Staff ID</th></tr>";
     while($row = $result->fetch_assoc()) {
-      echo "<tr><td >".$row["fname"]."</td><td>".$row["lname"]."</td><td style='color: red; background-color: black;text-align: center;'>".$row["staff_id"]."</td></tr>";
+      echo "<tr><td >".$row["fname"]."</td><td>".$row["lname"]."</td><td style='color: white;  background-color: black;text-align: center;'>".strtoupper($row["staff_id"])."</td></tr>";
     }
     echo "</table>";
   } 
@@ -31,3 +55,7 @@ if ($result->num_rows > 0){
 // close the database connection
 $connect->close();
 ?>
+
+</div>
+</html>
+
