@@ -1,40 +1,4 @@
 
-<style>
-table {
-  border-collapse: collapse;
-  width: 100%;
-  font-family: Arial, sans-serif;
-}
-
-td, th {
-  border: 1px solid #ddd;
-  padding: 8px;
-}
-
-th {
-  background-color: #f2f2f2;
-  color: #333;
-  text-align: left;
-}
-
-tr:hover {
-  background-color: #f5f5f5;
-}
-
-.red {
-  color: red;
-}
-
-.black {
-  background-color: black;
-  color: white;
-}
-
-.center {
-  text-align: center;
-}
-</style>
-
 <!DOCTYPE html>
 <html>
 <head>
