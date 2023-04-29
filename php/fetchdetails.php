@@ -15,7 +15,7 @@ foreach ($result as $data) {
     echo ' <div class="detail">';
     echo '  <h6 class="stu_name">' . $data['First_Name'] . ' ' . $data['Last_Name'] . '</h6>';
     echo '  <h6 class="stu_ID">' . $data['Student_ID'] . '</h6>';
-    echo '  <h6 class="stu_phone">' . $data['Phone_Number'] . '</h6>';
+    echo '  <h6 class="stu_phone">' . $data['Room_Number'] . '</h6>';
     echo '  </div>';
     echo '</div>';
     $count++;

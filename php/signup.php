@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Potters Lodge</title>
     <link rel="shortcut icon" href="images/logo.jpeg" type="image/x-icon">
+    <link rel="stylesheet" href="style.c">
     <script type="text/javascript">
 		function validateForm() {
 			var fname = document.forms["myForm"]["fname"].value;
