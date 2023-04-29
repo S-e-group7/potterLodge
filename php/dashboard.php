@@ -4,10 +4,14 @@ include('conn.php');
 
     session_start();
     $admin=$_SESSION['adminName'];
+    # Query the database to retrieve the first and last name of the admin
+$sql = "SELECT fname, lname FROM admin1 WHERE staff_id = '$admin'";
+$result = mysqli_query($conn, $sql);
 
-   # $sql="SELECT * from admin1 where ";
-  #  $que-mysqli_query($conn,$sql);
-   # $res=mysqli_fetch_assoc($que);
+# Get the admin's first and last name from the query result
+$row = mysqli_fetch_assoc($result);
+$fname = $row['fname'];
+$lname = $row['lname'];
 
 
       ?>
@@ -21,6 +25,7 @@ include('conn.php');
     <title>Home-page</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="responsive.css">
     <link rel="shortcut icon" href="images/logo.jpeg" type="image/x-icon">
     
 </head>
@@ -42,9 +47,13 @@ include('conn.php');
                             <input style="background-color:blue; width:200px;   cursor:pointer;" type="submit" value="Staff">
                         </form>
                     <br>
+                <!--
+
                         <form style=" width: fit-content" action="student_db.php" method="GET">
                             <input style="background-color:blue; width:200px;   cursor:pointer;" type="submit" value="Room">
                         </form>
+
+                 -->
 
                 </div>
                 <div  style="margin-left:38px ;" class="logout">
@@ -57,7 +66,7 @@ include('conn.php');
                 <div class="top_bar">
                     <div class="profile">
                         <img src="images/icons8-user-64.png" class="user" alt="">
-                        <h3 class="username"> Micheal</h3>
+                        <!--h2 class="username"><?php echo $fname; ?></h2> -->
 
                     </div>
                     <div search_section>
@@ -72,9 +81,10 @@ include('conn.php');
                 </div>
                 <hr>
                 <div class="date">
-                    <h5>Mon 27, Feb 2023</h5>
-                    <h1 class="welcome">Welcome back Micheal</h1>
+                    <h5><?php echo date('D d, M Y'); ?></h5>
+                    <h1 class="welcome" style="font-family:fantasy;">Welcome back <?php echo $lname . " " . $fname; ?></h1>
                 </div>
+
                 <div class="search_result">
 
 

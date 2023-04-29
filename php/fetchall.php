@@ -13,9 +13,9 @@ foreach($result as $data){
      echo  " <img src='images/".$data['pic']."' style='width:100%;height:100%;' >";
     echo  "</div>";
      echo  ' <div class="detail">';
-    echo '  <h6 class="stu_name">'.$data['First_Name'].' '.$data['Last_Name'].'</h6>';
-     echo      ' <h6 class="stu_ID">'.$data['Student_ID'].'</h6>';
-       echo     '<h6 class="stu_phone">'.$data['Phone_Number'].'</h6>';
+    echo '  <h6 class="stu_name" style="font-family:fantasy;">'.$data['First_Name'].' '.$data['Last_Name'].'</h6>';
+     echo      ' <h6 class="stu_ID" style="font-family:fantasy;">'.$data['Student_ID'].'</h6>';
+       echo     '<h6 class="stu_phone" style="font-family:fantasy;">'.$data['Phone_Number'].'</h6>';
      echo '  </div>';
     echo '</div>';
 

@@ -5,7 +5,7 @@
     box-sizing: border-box;
     text-decoration: none;
     list-style: none;
-    font-family: 'Courier New', Courier, monospace
+    font-family: fantasy;
 }
 
 img {
@@ -221,7 +221,8 @@ form {
 .search_section .form {
     display: flex;
     align-items: center;
-    margin-top: 10px
+    margin-top: 10px;
+    
 }
 
 .search_result {
@@ -234,13 +235,14 @@ form {
     display: grid;
     grid-template-columns: auto auto;
     padding: 10px;
+    font-family: fantasy;
 }
 
 .stu_card {
     background-color: rgba(255, 255, 255, 0.8);
     border: 1px solid rgba(255, 255, 255, 0.8);
     padding: 15px;
-    font-size: 30px;
+    font-size: 20px;
     display: flex;
     margin: 10px;
     border-radius: 10px;
@@ -305,3 +307,6 @@ table {
     text-align: center;
   }
 
+
+  
+  
