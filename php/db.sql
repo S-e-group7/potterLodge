@@ -1,3 +1,5 @@
+
+--Database Structure for the Porters Lodge
 -- phpMyAdmin SQL Dump
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
@@ -26,7 +28,6 @@ SET time_zone = "+00:00";
 --
 -- Table structure for table `db`
 --
-
 CREATE TABLE `db` (
   `COL 1` varchar(10) DEFAULT NULL,
   `COL 2` varchar(12) DEFAULT NULL,
@@ -41,7 +42,6 @@ CREATE TABLE `db` (
 --
 -- Dumping data for table `db`
 --
-
 INSERT INTO `db` (`COL 1`, `COL 2`, `COL 3`, `COL 4`, `COL 5`, `COL 6`, `COL 7`, `COL 8`) VALUES
 ('First Name', 'Last Name', 'STUDENT-ID', 'Gender', 'Phone-Number', 'Email', 'Room-Number', 'PICTURE'),
 ('Rebbecca', 'Didio', 'Ps/itc/22/0050', 'F', '03-8174-9123', 'rebbecca.didio@didio.com.au', 'A-60', ''),
