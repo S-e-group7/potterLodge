@@ -22,7 +22,9 @@ step:
 
 3. Click on the "Import" tab in the phpMyAdmin interface.
 
-4. In the "File to import" section, click on the "Choose File" button and select the SQL file that contains your database. This file must be located on your computer.
+most important thing dont forget to create a database called s_e and after that import the admin1 and the db table into the myphpadmin
+
+4. In the "File to import" section, click on the "Choose File" button and select the SQL file that contains your table. This file must be located on your computer.
 
 5. Under the "Format" section, select "SQL" from the dropdown menu.
 
